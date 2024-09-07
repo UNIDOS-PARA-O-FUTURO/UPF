@@ -1,0 +1,712 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&display=swap');/* Variáveis de Cores */
+:root {
+    --primary-color: #3248c7;
+    --secondary-color: #ffcc00;
+    --accent-color: #03a9f4;
+    --background-color: #f4f4f4;
+    --text-color: #333;
+    --border-color: #ddd;
+    --modal-background: rgba(0,0,0,0.5);
+    --modal-content-background: #fff;
+    --transition-speed: 0.3s; /* Transição padrão */
+}
+
+/* Global Styles */
+body {
+    
+    font-family: "Arvo", serif;
+    font-weight: 400;
+    font-style: normal; 
+    color: #000;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background: var(--background-color);
+    background-image: linear-gradient(
+        to right,
+        rgba(3, 3, 3, 0.233),
+        rgba(162, 180, 58, 0.979),
+        rgb(224, 224, 17),
+        rgb(255, 255, 0)
+    );
+    color: var(--text-color);
+}
+
+/* Header */
+header {    
+    text-align: center;
+    background-image: url('FOTOS/ft upf.jpeg');
+    background-size: cover;
+    background-position: center;
+    height: 300px;
+    color: #dfd8d8;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    animation: fadeIn 1s ease-out;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+/* Select Element */
+select {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    white-space: nowrap;
+    min-width: 300px;
+    transition: border-color var(--transition-speed) ease;
+}
+
+/* Table Wrapper */
+.table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    animation: slideIn 0.5s ease;
+}
+
+/* Table Styles */
+table {
+    min-width: 600px;
+    border-collapse: collapse;
+    animation: fadeIn 1s ease-out;
+}
+
+table th, table td {
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    text-align: center;
+    transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
+}
+
+table th:hover, table td:hover {
+    background-color: #f4f4f4;
+    color: var(--primary-color);
+}
+
+/* Calendar */
+#calendar {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 10px;
+    animation: fadeIn 1s ease-out;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background: var(--primary-color);
+    color: #fff;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.calendar-header h2 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.calendar-header button {
+    background: #fff;
+    border: none;
+    color: var(--accent-color);
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: background 0.3s ease;
+}
+
+.calendar-header button:hover {
+    background: #ddd;
+    animation: buttonPulse 1s infinite;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    background: var(--background-color);
+    border-radius: 8px;
+}
+
+.calendar-day {
+    text-align: center;
+    padding: 10px;
+    background: #e0e0e0;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 1px;
+}
+
+.calendar-days div {
+    text-align: center;
+    padding: 15px;
+    background: #fff;
+    cursor: pointer;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.calendar-days div.event-day {
+    background: #e3f2fd;
+    border-color: var(--accent-color);
+    position: relative;
+}
+
+.calendar-days div.event-day .event-indicator {
+    background: var(--accent-color);
+    border-radius: 50%;
+    width: 6px;
+    height: 6px;
+    display: block;
+    margin: 0 auto;
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.calendar-days div:hover {
+    background: #f1f1f1;
+    transform: scale(1.05);
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: var(--modal-background);
+    animation: fadeIn 0.5s ease-out;
+}
+
+.modal-content {
+    background-color: var(--modal-content-background);
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 500px;
+    position: relative;
+    animation: slideIn 0.5s ease-out;
+}
+
+.close {
+    color: #aaa;
+    font-size: 24px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    transition: color 0.3s ease;
+}
+
+.close:hover {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Navigation */
+nav {
+    margin: 15px 0;
+    text-align: center;
+}
+
+nav a {
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--secondary-color);
+    transform: scale(1.1);
+}
+
+/* Container */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    overflow: hidden;
+    animation: fadeIn 1s ease-out;
+}
+
+/* Section */
+.section {
+    background: #fff;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-out;
+}
+
+/* Section Title */
+.section h2 {
+    margin-top: 0;
+    color: var(--text-color);
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+    animation: slideIn 0.5s ease-out;
+}
+
+/* Tables */
+#tabela-jogos, #resultados-tabela, #classificacao-tabela {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+/* News Slider */
+.news-slider {
+    position: relative;
+    overflow: hidden;
+    margin: 20px 0;
+}
+
+.news-item {
+    display: none;
+    padding: 15px;
+    background: #f9f9f9;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    animation: slideIn 0.5s ease;
+}
+
+.news-item.active {
+    display: block;
+}
+
+/* Gallery */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.gallery img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Feedback Form */
+#feedback-form label {
+    display: block;
+    margin: 10px 0 5px;
+    color: var(--text-color);
+}
+
+#feedback-form input, #feedback-form textarea, #feedback-form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    transition: border-color var(--transition-speed) ease;
+}
+
+#feedback-form input[type="submit"] {
+    background: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 4px;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+#feedback-form input[type="submit"]:hover {
+    background: #555;
+    transform: scale(1.05);
+}
+
+/* Chat Box */
+.chat-box {
+    border: 1px solid var(--border-color);
+    padding: 10px;
+    height: 200px;
+    overflow-y: auto;
+    background: #fff;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.5s ease-out;
+}
+
+.chat-box div {
+    padding: 5px;
+    border-bottom: 1px solid var(--border-color);
+    transition: background-color 0.3s ease;
+}
+
+.chat-box div:hover {
+    background-color: #f4f4f4;
+}
+
+/* Chat Form */
+#chat-form input[type="submit"] {
+    background: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 4px;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+#chat-form input[type="submit"]:hover {
+    background: #555;
+    transform: scale(1.05);
+}
+
+/* Notification */
+.notification {
+    background: #333;
+    color: #fff;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    padding: 15px;
+    border-radius: 4px;
+    display: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.5s ease-out;
+}
+
+.notification button {
+    background: #555;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    padding: 5px 10px;
+    margin-left: 10px;
+    border-radius: 4px;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.notification button:hover {
+    background: #777;
+    transform: scale(1.05);
+}
+
+/* Footer */
+.footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 15px 0;
+    position: relative;
+    width: 100%;
+    animation: fadeIn 1s ease-out;
+}
+
+/* Team Roster */
+#team-roster {
+    background: #f0f0f0;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+    animation: fadeIn 1s ease-out;
+}
+
+#team-roster h2 {
+    margin-top: 0;
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    text-align: center;
+    animation: slideIn 0.5s ease-out;
+}
+
+.roster-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Player Card */
+.player-card {
+    background: #fff;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    width: 220px;
+    text-align: center;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.player-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10%;
+    border: 2px solid #000000b9;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease;
+}
+
+.player-info {
+    margin-top: 10px;
+}
+
+.player-info h3 {
+    margin: 0;
+    font-size: 1.3rem;
+    color: var(--text-color);
+}
+
+.player-info p {
+    margin: 5px 0;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.player-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.player-card img:hover {
+    transform: scale(1.1);
+}
+
+/* Biography Section */
+.bio {
+    font-size: 0.8rem;
+    color: #444;
+    margin-top: 10px;
+    text-align: justify;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes buttonPulse {
+    0% {
+        background-color: var(--accent-color);
+    }
+    50% {
+        background-color: var(--secondary-color);
+    }
+    100% {
+        background-color: var(--accent-color);
+    }
+}
+
+@keyframes backgroundColorChange {
+    0% {
+        background: var(--background-color);
+    }
+    100% {
+        background: #e0e0e0;
+    }
+}
+
+/* Media Queries for Mobile Devices */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    .calendar-header h2 {
+        font-size: 1.2rem;
+    }
+
+    .calendar-header button {
+        font-size: 1rem;
+    }
+
+    #calendar {
+        padding: 5px;
+    }
+
+    .calendar-day {
+        padding: 5px;
+    }
+
+    .calendar-days div {
+        padding: 10px;
+    }
+
+    nav a {
+        font-size: 1rem;
+        margin: 0 10px;
+    }
+
+    .section {
+        padding: 15px;
+    }
+
+    #team-roster h2 {
+        font-size: 2rem;
+    }
+
+    .player-card {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .player-info h3 {
+        font-size: 1.1rem;
+    }
+
+    .player-info p {
+        font-size: 0.8rem;
+    }
+
+    .bio {
+        font-size: 0.7rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    .calendar-header h2 {
+        font-size: 1rem;
+    }
+
+    .calendar-header button {
+        font-size: 0.9rem;
+    }
+
+    .calendar-days div {
+        padding: 8px;
+    }
+
+    nav a {
+        font-size: 0.9rem;
+        margin: 0 5px;
+    }
+
+    .section {
+        padding: 10px;
+    }
+
+    #team-roster h2 {
+        font-size: 1.8rem;
+    }
+
+    .player-card {
+        width: 100%;
+        max-width: 280px;
+    }
+
+    .player-info h3 {
+        font-size: 1rem;
+    }
+
+    .player-info p {
+        font-size: 0.7rem;
+    }
+
+    .bio {
+        font-size: 0.6rem;
+    }
+}
+
+/* Additional Styles */
+button, input[type="button"], input[type="submit"] {
+    border: none;
+    cursor: pointer;
+    transition: background-color var(--transition-speed), color var(--transition-speed), transform var(--transition-speed);
+}
+
+button:hover, input[type="button"]:hover, input[type="submit"]:hover {
+    background-color: var(--secondary-color);
+    color: #333;
+    transform: scale(1.05);
+}
+
+a {
+    transition: color var(--transition-speed), transform var(--transition-speed);
+}
+
+a:hover {
+    color: var(--secondary-color);
+    transform: scale(1.05);
+}
+
+/* Utility Classes */
+.text-center {
+    text-align: center;
+}
+
+.margin-top {
+    margin-top: 20px;
+}
+
+.padding-10 {
+    padding: 10px;
+}
+
+.border {
+    border: 1px solid var(--border-color);
+}
+
+.rounded {
+    border-radius: 8px;
+}

@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>UNIDOS PARA O FUTURO</title>
+</head>
+<body>
+    <header>
+        <h1>Campeonato Anguerenense de Futebol Amador <br>UPF</h1>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#sobre">Sobre</a>
+            <a href="#times">Times</a>
+            <a href="#tabela">Tabela</a>
+            <a href="#resultados">Resultados</a>
+            <a href="#noticias">Notícias</a>
+            <a href="#galeria">Galeria</a>
+            <a href="#calendario">Calendário</a>
+            <a href="#classificacao">Classificação</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <section id="home" class="section">
+            <h2>Bem-vindo</h2>
+            <p>Bem-vindos ao Time UPF!🐝🖤💛🐝
+                <br>
+                <br>
+                É com grande entusiasmo que recebemos cada um de vocês nesta equipe incrível. Juntos, vamos trabalhar com dedicação e paixão para alcançar nossos objetivos e superar desafios. O sucesso do nosso time depende da colaboração, do respeito e do compromisso de cada membro. Estamos ansiosos para ver as grandes conquistas que alcançaremos juntos. Sejam bem-vindos e vamos fazer deste time um exemplo de excelência!
+                <br>
+                <br>
+                Atenciosamente,
+                Diretoria UPF
+                
+                .</p>
+        </section>
+
+        <section id="sobre" class="section">
+            <h2>Sobre o Campeonato</h2>
+            <p>O Campeonato de Futebol Amador Anguerenense é uma competição anual que envolve equipes locais. Fundado em 2014, o campeonato visa promover o esporte e a integração entre a comunidade.</p>
+        </section>
+
+        <section id="times" class="section">
+            <h2>Times Participantes</h2>
+            <ul>
+                <li>PROJETO SENINHA</li>
+                <li>BARRA DE M.</li>
+                <li>GAMEILEIRA</li>
+                <li>ANGUERENSE</li>
+                <li>IND. DE AREIAS</li>
+                <li>BOA ESPERANÇA</li>
+                <li>ESC. BASTOS</li>
+                <li>LOBOS</li>
+                <li>COPACABANA</li>
+                <li>CORINTHIANS</li>
+                <li>BATALHA</li>
+                <li>RIVER GUARIBAS</li>
+                <li>JUVENTUDE</li>
+                <li>BELA VISTA</li>
+                <li>UPF</li>
+                <li>VILA VERDE</li>
+                <!-- Adicione mais times conforme necessário -->
+            </ul>
+        </section>
+
+        <section id="tabela" class="section">
+            <h2>Tabela de Jogos</h2>
+                <div class="table-wrapper">
+            <table id="tabela-jogos">
+                <thead>
+                    <tr>
+                        <th>Data</th>
+                        <th>Hora</th>
+                        <th>Time 1</th>
+                        <th>Time 2</th>
+                        <th>Local</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Dados dinâmicos aqui -->
+                </tbody>
+            </table>
+                </div>
+        </section>
+
+        <section id="resultados" class="section">
+            <h2>Resultados</h2>
+            <div class="table-wrapper">
+                <table id="resultados-tabela">
+                    <thead>
+                        <tr>
+                            <th>Data</th>
+                            <th>Time 1</th>
+                            <th>Placar</th>
+                            <th>Time 2</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <!-- Dados dinâmicos aqui -->
+                    </tbody>
+              
+                </table>
+            </div>    
+        </section>
+
+        <section id="classificacao" class="section">
+            <h2>Classificação</h2>
+            <div class="table-wrapper">
+                <table id="classificacao-tabela">
+                    <thead>
+                        <tr>
+                            <th>Posição</th>
+                            <th>Time</th>
+                            <th>Jogos</th>
+                            <th>Vitórias</th>
+                            <th>Empates</th>
+                            <th>Derrotas</th>
+                            <th>Gols Prós</th>
+                         <th>Gols Contra</th>
+                            <th>Saldo de Gols</th>
+                            <th>Pontos</th>
+                        </tr>
+                    </thead>
+                <tbody>
+                    <!-- Dados dinâmicos aqui -->
+                </tbody>
+                </table>
+            </div>
+        </section>
+
+        <div id="calendar">
+            <div class="calendar-header">
+                <button id="prev-month">&lt;</button>
+                <h2 id="month-year"></h2>
+                <button id="next-month">&gt;</button>
+            </div>
+            <div class="calendar-grid">
+                <div class="calendar-day">Dom</div>
+                <div class="calendar-day">Seg</div>
+                <div class="calendar-day">Ter</div>
+                <div class="calendar-day">Qua</div>
+                <div class="calendar-day">Qui</div>
+                <div class="calendar-day">Sex</div>
+                <div class="calendar-day">Sáb</div>
+            </div>
+            <div id="days" class="calendar-days"></div>
+        </div>
+    
+        <!-- Modal for event details -->
+        <div id="event-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2 id="event-title"></h2>
+                <p id="event-details"></p>
+            </div>
+        </div>
+
+        <section id="team-roster" class="section">
+            <h2>Elenco do Time</h2>
+            <div class="roster-container">
+                <!-- Exemplos de jogadores -->
+                <div class="player-card">
+                    <img src="FOTOS/nego bren0o.jpeg" alt="Jogador 1">
+                    <div class="player-info">
+                        <h3>NEGO BRENO</h3>
+                        <p><strong>Posição:</strong> Lateral</p>
+                        <p><strong>Número:</strong> 66</p>
+                    </div>
+                </div>
+                <div class="player-card">
+                    <img src="FOTOS/eike.jpeg" alt="Jogador 2">
+                    <div class="player-info">
+                        <h3>EIKE</h3>
+                        <p><strong>Posição:</strong> Atacante</p>
+                        <p><strong>Número:</strong> 7</p>
+                    </div>
+                </div>
+                <div class="player-card">
+                    <img src="FOTOS/gean.jpeg" alt="Jogador 2">
+                    <div class="player-info">
+                        <h3>JEAN</h3>
+                        <p><strong>Posição:</strong> Meia</p>
+                        <p><strong>Número:</strong> 34</p>
+                    </div>
+                </div>
+                <div class="player-card">
+                    <img src="FOTOS/rv.jpeg" alt="Jogador 2">
+                    <div class="player-info">
+                        <h3>RV</h3>
+                        <p><strong>Posição:</strong> Atacante</p>
+                        <p><strong>Número:</strong> 25</p>
+                    </div>
+                </div>
+                <div class="player-card">
+                    <img src="FOTOS/shureck.jpeg" alt="Jogador 2">
+                    <div class="player-info">
+                        <h3>CH</h3>
+                        <p><strong>Posição:</strong> Atacante</p>
+                        <p><strong>Número:</strong> 15</p>
+                    </div>
+                </div>
+                <div class="player-card">
+                    <img src="FOTOS/suan.jpeg" alt="Jogador 2">
+                    <div class="player-info">
+                        <h3>SUAN</h3>
+                        <p><strong>Posição:</strong> Lateral</p>
+                        <p><strong>Número:</strong> 2</p>
+                    </div>
+                </div>
+                <div class="player-card">
+                    <img src="FOTOS/vitinho.jpeg" alt="Jogador 2">
+                    <div class="player-info">
+                        <h3>VITINHO</h3>
+                        <p><strong>Posição:</strong> Lateral</p>
+                        <p><strong>Número:</strong> 22</p>
+                    </div>
+                </div>
+                <div class="player-card">
+                    <img src="FOTOS/elisel.jpeg" alt="Jogador 2">
+                    <div class="player-info">
+                        <h3>ELISEU</h3>
+                        <p><strong>Posição:</strong> Zagueiro</p>
+                        <p><strong>Número:</strong> 3</p>
+                    </div>
+                <!-- Adicione mais jogadores aqui -->
+            </div>
+        </section>
+
+        <section id="noticias" class="section">
+            <h2>Notícias</h2>
+            <div class="news-slider">
+                <div class="news-item active">
+                    <h3>UPF 3XO SOBRE O RIVER DE GUARIBAS</h3>
+                    <p>UPF Goleia River de Guaribas por 3 a 0 em Grande Exibição
+                        <br>
+                        <br>
+                        Em uma noite de grandes emoções e excelente futebol, o time Anguerense UPF venceu o River de Guaribas com um contundente 3 a 0, em uma partida marcada por uma performance impecável dos jogadores.
+                        
+                        Desde o apito inicial, o UPF demonstrou domínio e controle total do jogo, com uma defesa sólida e um ataque incisivo. Os gols vieram com muito trabalho em equipe e estratégias bem executadas, resultando em uma vitória convincente.
+                        
+                        O primeiro gol, que abriu o placar, foi seguido por mais duas finalizações certeiras, consolidando a liderança da equipe e garantindo a vantagem confortável. Com essa vitória, o UPF não só soma três pontos importantes, mas também reforça sua posição no campeonato, mostrando que está em plena forma e pronto para novos desafios.
+                        
+                        O técnico e a comissão técnica parabenizaram o time pelo esforço e dedicação, destacando o excelente trabalho coletivo e a disciplina tática. A equipe agora se prepara para o próximo confronto, mantendo o foco e a determinação que foram evidentes nesta vitória.
+                        <br>
+                        <br>
+                        Parabéns ao UPF pela grande exibição e pela vitória expressiva!
+                        
+                        </p>
+                </div>
+                <div class="news-item">
+                    <h3>Notícia 2</h3>
+                    <p>Detalhes da notícia 2...</p>
+                </div>
+                <!-- Adicione mais notícias conforme necessário -->
+            </div>
+        </section>
+
+        <section id="galeria" class="section">
+            <h2>Galeria</h2>
+            <div class="gallery">
+                <img src="FOTOS/GIL.jpeg" alt="Imagem 1">
+                <img src="FOTOS/NB.jpeg" alt="Imagem 2">
+                <img src="FOTOS/ft upf.jpeg" alt="Imagem 3">
+                <img src="FOTOS/PEPITA.jpeg" alt="Imagem 3">
+
+                <!-- Adicione mais imagens conforme necessário -->
+            </div>
+        </section>
+
+        <section id="chat" class="section">
+            <h2>Chat em Tempo Real</h2>
+            <div id="chat-box" class="chat-box">
+                <!-- Mensagens aparecerão aqui -->
+            </div>
+            <form id="chat-form">
+                <input type="text" id="chat-message" placeholder="Digite uma mensagem..." required>
+                <input type="submit" value="Enviar">
+            </form>
+        </section>
+
+        <section id="faq" class="section">
+            <h2>PATROCINADORES</h2>
+            <div class="faq-item">
+                <h3>Super Ricardo</h3>
+                <h3>Eduardo Filho</h3>
+                <h3>Lima Graf</h3>
+                <h3>Açai do Gê</h3>
+            </div>
+            <!-- Adicione mais perguntas e respostas conforme necessário -->
+        </section>
+    </div>
+
+    <div id="notification" class="notification">
+        <p id="notification-text">Você tem uma nova notificação!</p>
+        <button id="close-notification">Fechar</button>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2024 Campeonato de Futebol Amador Anguerenense. Todos os direitos reservados.UPF ML</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/6.1.7/fullcalendar.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/6.1.7/locales/pt-br.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Populando a tabela de jogos
+            const tabelaJogos = [
+                { data: '07-09-2024', hora: '16:00', time1: 'UPF', time2: 'Vila Verde', local: 'ESTÁDIO JOSÉLITO VIEIRA' },
+                { data: '22-09-2024', hora: '09:00', time1: 'Juventude', time2: 'UPF', local: 'ESTÁDIO JOSÉLITO VIEIRA' },
+                { data: '16-10-2024', hora: '19:00', time1: 'UPF', time2: 'Bela Vista', local: 'ESTÁDIO JOSÉLITO VIEIRA' },
+
+                // Adicione mais jogos conforme necessário
+            ];
+
+            const tabelaJogosBody = document.querySelector('#tabela-jogos tbody');
+            tabelaJogosBody.innerHTML = tabelaJogos.map(jogo => `
+                <tr>
+                    <td>${jogo.data}</td>
+                    <td>${jogo.hora}</td>
+                    <td>${jogo.time1}</td>
+                    <td>${jogo.time2}</td>
+                    <td>${jogo.local}</td>
+                </tr>
+            `).join('');
+
+            // Populando a tabela de resultados
+            const resultados = [
+                { data: '2024-09-07', time1: 'UPF', placar: '*-*', time2: 'Vila Verde' },
+                
+                // Adicione mais resultados conforme necessário
+            ];
+
+            const resultadosBody = document.querySelector('#resultados-tabela tbody');
+            resultadosBody.innerHTML = resultados.map(resultado => `
+                <tr>
+                    <td>${resultado.data}</td>
+                    <td>${resultado.time1}</td>
+                    <td>${resultado.placar}</td>
+                    <td>${resultado.time2}</td>
+                </tr>
+            `).join('');
+
+            // Populando a tabela de classificação
+            const classificacao = [
+                { posicao: 1, time: 'UPF', jogos: 0, vitorias: 0, empates: 0, derrotas: 0, golsPros: 0, golsContra: 0, saldoGols: 0, pontos: 0 },
+                { posicao: 2, time: 'JUVENTUDE', jogos: 0, vitorias: 0, empates: 0, derrotas: 0, golsPros: 0, golsContra: 0, saldoGols: 0, pontos: 0 },
+                { posicao: 2, time: 'VILA VERDE', jogos: 0, vitorias: 0, empates: 0, derrotas: 0, golsPros: 0, golsContra: 0, saldoGols: 0, pontos: 0 },
+                { posicao: 2, time: 'BELA VISTA', jogos: 0, vitorias: 0, empates: 0, derrotas: 0, golsPros: 0, golsContra: 0, saldoGols: 0, pontos: 0 },
+                // Adicione mais classificações conforme necessário
+            ];
+
+            const classificacaoBody = document.querySelector('#classificacao-tabela tbody');
+            classificacaoBody.innerHTML = classificacao.map(item => `
+                <tr>
+                    <td>${item.posicao}</td>
+                    <td>${item.time}</td>
+                    <td>${item.jogos}</td>
+                    <td>${item.vitorias}</td>
+                    <td>${item.empates}</td>
+                    <td>${item.derrotas}</td>
+                    <td>${item.golsPros}</td>
+                    <td>${item.golsContra}</td>
+                    <td>${item.saldoGols}</td>
+                    <td>${item.pontos}</td>
+                </tr>
+            `).join('');
+
+            // Inicialização do calendário
+            const calendarEl = document.getElementById('calendar');
+            new FullCalendar.Calendar(calendarEl, {
+                locale: 'pt-br',
+                initialView: 'dayGridMonth',
+                events: [
+                    { title: 'Jogo Time 1 vs Time 2', start: '2024-08-01T15:00:00' },
+                    { title: 'Jogo Time 3 vs Time 4', start: '2024-08-02T16:00:00' },
+                    // Adicione mais eventos conforme necessário
+                ]
+            }).render();
+
+            // Notificação
+            const notification = document.getElementById('notification');
+            const closeNotificationBtn = document.getElementById('close-notification');
+            
+            setTimeout(() => {
+                notification.style.display = 'block';
+            }, 3000);
+
+            closeNotificationBtn.addEventListener('click', () => {
+                notification.style.display = 'none';
+            });
+        });
+
+        // Função de chat em tempo real
+        document.getElementById('chat-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const messageInput = document.getElementById('chat-message');
+            const chatBox = document.getElementById('chat-box');
+            const newMessage = document.createElement('div');
+            newMessage.textContent = messageInput.value;
+            chatBox.appendChild(newMessage);
+            messageInput.value = '';
+            chatBox.scrollTop = chatBox.scrollHeight;
+        });
+
+
+        document.addEventListener('DOMContentLoaded', function () {
+    const daysContainer = document.getElementById('days');
+    const monthYearElement = document.getElementById('month-year');
+    const prevMonthButton = document.getElementById('prev-month');
+    const nextMonthButton = document.getElementById('next-month');
+    const eventModal = document.getElementById('event-modal');
+    const closeModal = document.querySelector('.modal .close');
+    const eventTitle = document.getElementById('event-title');
+    const eventDetails = document.getElementById('event-details');
+
+    let currentMonth = new Date().getMonth();
+    let currentYear = new Date().getFullYear();
+    
+    // Example events
+    const events = {
+        '2024-09-07': { title: 'Jogo 1', details: 'UPF x VILA VERDE' },
+        '2024-09-22': { title: 'Jogo 2', details: 'JUVENTUDE x UPF' },
+        '2024-10-16': { title: 'Jogo 3', details: 'UPF x BELA VISTA' },
+
+    };
+
+    function renderCalendar(month, year) {
+        daysContainer.innerHTML = '';
+
+        const firstDay = new Date(year, month, 1).getDay();
+        const lastDate = new Date(year, month + 1, 0).getDate();
+        
+        for (let i = 0; i < firstDay; i++) {
+            daysContainer.innerHTML += '<div></div>';
+        }
+        
+        for (let day = 1; day <= lastDate; day++) {
+            const dateKey = `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+            const event = events[dateKey];
+            daysContainer.innerHTML += `
+                <div class="${event ? 'event-day' : ''}" data-date="${dateKey}">
+                    ${day}
+                    ${event ? '<span class="event-indicator"></span>' : ''}
+                </div>
+            `;
+        }
+
+        monthYearElement.textContent = `${getMonthName(month)} ${year}`;
+    }
+
+    function getMonthName(month) {
+        const months = [
+            'Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho',
+            'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'
+        ];
+        return months[month];
+    }
+
+    function showEvent(date) {
+        const event = events[date];
+        if (event) {
+            eventTitle.textContent = event.title;
+            eventDetails.textContent = event.details;
+            eventModal.style.display = 'block';
+        }
+    }
+
+    prevMonthButton.addEventListener('click', function () {
+        if (currentMonth === 0) {
+            currentMonth = 11;
+            currentYear--;
+        } else {
+            currentMonth--;
+        }
+        renderCalendar(currentMonth, currentYear);
+    });
+
+    nextMonthButton.addEventListener('click', function () {
+        if (currentMonth === 11) {
+            currentMonth = 0;
+            currentYear++;
+        } else {
+            currentMonth++;
+        }
+        renderCalendar(currentMonth, currentYear);
+    });
+
+    closeModal.addEventListener('click', function () {
+        eventModal.style.display = 'none';
+    });
+
+    daysContainer.addEventListener('click', function (event) {
+        const target = event.target;
+        if (target.classList.contains('event-day')) {
+            const date = target.getAttribute('data-date');
+            showEvent(date);
+        }
+    });
+
+    renderCalendar(currentMonth, currentYear);
+});
+
+    
+    </script>
+</body>
+</html>
