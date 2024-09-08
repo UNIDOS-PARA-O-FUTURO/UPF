@@ -4,7 +4,7 @@
     --primary-color: #3248c7;
     --secondary-color: #ffcc00;
     --accent-color: #03a9f4;
-    --background-color: #f4f4f4;
+    --background-color: #a7a1a1;
     --text-color: #333;
     --border-color: #ddd;
     --modal-background: rgba(0,0,0,0.5);
@@ -40,7 +40,7 @@ header {
     background-size: cover;
     background-position: center;
     height: 300px;
-    color: #dfd8d8;
+    color: #979595;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -276,7 +276,7 @@ nav a:hover {
 .section h2 {
     margin-top: 0;
     color: var(--text-color);
-    border-bottom: 2px solid #eee;
+    border-bottom: 2px solid #8f8a8a;
     padding-bottom: 10px;
     animation: slideIn 0.5s ease-out;
 }
