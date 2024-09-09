@@ -36,11 +36,12 @@ body {
 /* Header */
 header {    
     text-align: center;
-    background-image: url('FOTOS/ft upf.jpeg');
-    background-size: cover;
+    background-image: url('FOTOS/ESUCDO_UPF-removebg-preview.png');
+    background-size: contain; /* Ajusta a imagem para caber dentro do header */
     background-position: center;
-    height: 300px;
-    color: #979595;
+    background-repeat: no-repeat; /* Impede que a imagem se repita */
+    height: 600px; /* Ajuste a altura conforme necessário para acomodar a imagem */
+    color: #ffffff;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -50,10 +51,11 @@ header {
     animation: fadeIn 1s ease-out;
 }
 
+
 header h1 {
     margin: 0;
     font-size: 2.5rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    text-shadow: 2px 2px 4px rgb(0, 0, 0);
 }
 
 /* Select Element */
