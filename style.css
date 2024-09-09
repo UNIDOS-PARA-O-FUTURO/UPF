@@ -132,7 +132,7 @@ table th:hover, table td:hover {
 }
 
 .calendar-header button:hover {
-    background: #ddd;
+    background: #ffffff;
     animation: buttonPulse 1s infinite;
 }
 
